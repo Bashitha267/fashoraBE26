@@ -11,10 +11,6 @@ app.listen(5000,()=>{
 })
 
 // Node.js (Express)
-app.get('/ping', (req, res) => {
-  res.status(200).send('OK');
-});
-
 
 mongoose.connect('mongodb+srv://nimeshspc2k17:kingnimesh26@fashionora.6k3f4.mongodb.net/?retryWrites=true&w=majority&appName=fashionora')
 .then(()=>console.log('connected!'))
@@ -178,6 +174,12 @@ const getbyCategory=async(req,res)=>{
         res.status(500).json({message:e})
     }
 }
+app.get('/ping', (req, res) => {
+  res.status(200).send('OK');
+});
+app.head('/ping', (req, res) => {
+  res.sendStatus(200);
+});
 
 app.get('/getproducts', getProducts);
 app.post('/addproducts',addProducts)

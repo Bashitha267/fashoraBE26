@@ -10,6 +10,10 @@ app.listen(5000,()=>{
     console.log("Server is running on 5000")
 })
 
+// Node.js (Express)
+app.get('/ping', (req, res) => {
+  res.status(200).send('OK');
+});
 
 
 mongoose.connect('mongodb+srv://nimeshspc2k17:kingnimesh26@fashionora.6k3f4.mongodb.net/?retryWrites=true&w=majority&appName=fashionora')
